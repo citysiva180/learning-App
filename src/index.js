@@ -1,13 +1,19 @@
+//
+// ######## INDEX PAGE IS ABOVE APP PAGE  BUT ITS NOT THE ENTRY POINT###########
+//
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import configureStore from "./components/redux/configureStore";
+import { Provider } from "react-redux";
+const store = configureStore();
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 
